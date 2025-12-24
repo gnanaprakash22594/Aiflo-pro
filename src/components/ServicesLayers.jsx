@@ -50,8 +50,8 @@ const ServicesLayers = () => {
         <section className="services-section-layers py-32">
             <div className="container">
                 <div className="section-header mb-24">
-                    <h2 className="section-title text-5xl mb-6">Mastery Levels</h2>
-                    <p className="section-subtitle">A comprehensive framework for AI maturity.</p>
+                    <h2 className="section-title text-5xl mb-6">How We Help</h2>
+                    <p className="section-subtitle">We build intelligent systems that scale your business.</p>
                 </div>
 
                 <div className="layers-container flex flex-col gap-32">
