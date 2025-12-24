@@ -29,15 +29,9 @@ const services = [
 
 const VisualBlock = () => {
     return (
-        <div className="w-full h-[400px] rounded-3xl relative overflow-hidden bg-[#0c0a1f] border border-white/10 shadow-2xl">
-            {/* Glassmorphism Gradient Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl" />
-
-            {/* Center Text */}
-            <div className="relative z-10 w-full h-full flex items-center justify-center">
-                <div className="px-6 py-2 rounded-full bg-white/5 border border-white/5 text-white/20 text-sm font-mono tracking-widest">
-                    ANIMATION FRAME
-                </div>
+        <div className="visual-block-container">
+            <div className="visual-stub-text">
+                ANIMATION FRAME
             </div>
         </div>
     );
@@ -45,48 +39,33 @@ const VisualBlock = () => {
 
 const ServicesLayers = () => {
     return (
-        <section className="services-section-layers py-32 bg-[#0f0b29] relative z-20">
-            <div className="container mx-auto px-6">
-                <div className="section-header mb-32 text-center">
-                    <h2 className="section-title text-5xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400 mb-6">How We Help</h2>
-                    <p className="text-xl text-gray-400">We build intelligent systems that scale your business.</p>
+        <section className="services-layers-section">
+            <div className="container">
+                <div className="services-header">
+                    <h2 className="section-title">How We Help</h2>
+                    <p className="section-subtitle">We build intelligent systems that scale your business.</p>
                 </div>
 
-                <div className="layers-container flex flex-col gap-32">
+                <div className="services-list">
                     {services.map((service, index) => (
-                        <div
-                            key={service.id}
-                            // SWITCHING TO GRID to ensure 2-column layout is rigid
-                            // 'md' breakpoint (768px) is safer than 'lg' for most laptop splits
-                            className="grid grid-cols-1 md:grid-cols-2 gap-12 md:gap-24 items-center"
-                        >
-                            {/* 
-                                Logic for Zig-Zag: 
-                                Even Index (0, 2): Text Left, Visual Right 
-                                Odd Index (1, 3): Visual Left, Text Right
-                            */}
-
-                            {/* Text Block */}
-                            {/* If Odd Row, Order is 2 (Right Side) */}
-                            <div className={`text-left ${index % 2 !== 0 ? 'md:order-2' : 'md:order-1'}`}>
-                                <h3 className="text-3xl font-bold mb-6 text-white">
+                        <div key={service.id} className="service-row">
+                            {/* Text Side */}
+                            <div className="service-text-col">
+                                <h3 className="service-heading text-gradient">
                                     {service.title}
                                 </h3>
 
-                                <div className="mb-8 p-6 rounded-xl bg-blue-900/10 border-l-4 border-blue-500/50 backdrop-blur-sm">
-                                    <p className="text-blue-200 text-sm font-mono leading-relaxed">
-                                        <span className="text-blue-400 font-bold tracking-wide">TECH:</span> {service.tech}
-                                    </p>
+                                <div className="tech-badge">
+                                    <span className="tech-label">TECH:</span> {service.tech}
                                 </div>
 
-                                <p className="text-gray-300 text-lg leading-relaxed font-light">
+                                <p className="service-outcome">
                                     {service.outcome}
                                 </p>
                             </div>
 
-                            {/* Visual Block */}
-                            {/* If Odd Row, Order is 1 (Left Side) */}
-                            <div className={`w-full relative ${index % 2 !== 0 ? 'md:order-1' : 'md:order-2'}`}>
+                            {/* Visual Side */}
+                            <div className="service-visual-col">
                                 <VisualBlock />
                             </div>
                         </div>

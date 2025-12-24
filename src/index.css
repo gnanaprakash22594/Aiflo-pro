@@ -1019,65 +1019,141 @@ section {
 /* =========================================
    Services Layers Visuals
    ========================================= */
-.services-section-layers {
+/* =========================================
+   Services Layers (Vanilla CSS Fix)
+   ========================================= */
+.services-layers-section {
   background-color: var(--bg-secondary);
+  padding: 8rem 0;
   overflow: hidden;
 }
 
-.visual-block-inner {
+.services-header {
+  text-align: center;
+  margin-bottom: 6rem;
+}
+
+.services-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+}
+
+.service-row {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* ZIG-ZAG LOGIC: Even rows flip direction */
+.service-row:nth-child(even) {
+  flex-direction: row-reverse;
+}
+
+.service-text-col,
+.service-visual-col {
+  flex: 1;
   width: 100%;
-  height: 100%;
+  /* Ensure they take full width in stack mode */
+}
+
+.service-heading {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+  color: #fff;
+}
+
+.text-gradient {
+  background: linear-gradient(to right, #fff, #9ca3af);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.tech-badge {
+  background: rgba(30, 58, 138, 0.1);
+  /* Blue-900/10 */
+  border-left: 4px solid rgba(59, 130, 246, 0.5);
+  /* Blue-500/50 */
+  padding: 1.5rem;
+  border-radius: 0.75rem;
+  margin-bottom: 2rem;
+  font-family: monospace;
+  font-size: 0.875rem;
+  color: #bfdbfe;
+  /* Blue-200 */
+}
+
+.tech-label {
+  color: #60a5fa;
+  /* Blue-400 */
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin-right: 0.5rem;
+}
+
+.service-outcome {
+  font-size: 1.125rem;
+  color: #d1d5db;
+  /* Gray-300 */
+  line-height: 1.6;
+}
+
+.visual-block-container {
+  width: 100%;
+  height: 400px;
+  background-color: #0c0a1f;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 1.5rem;
   position: relative;
   overflow: hidden;
   box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Glass gradient overlay */
+.visual-block-container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+  z-index: 1;
+}
+
+.visual-stub-text {
+  position: relative;
+  z-index: 10;
+  padding: 0.5rem 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  background-color: #0c0a1f;
+  border-radius: 9999px;
+  color: rgba(255, 255, 255, 0.3);
+  font-family: monospace;
+  font-size: 0.875rem;
+  letter-spacing: 0.1em;
 }
 
-.glass-code-window {
-  background: rgba(0, 0, 0, 0.3);
-  border-radius: 0.75rem;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem;
-  position: relative;
-  backdrop-filter: blur(4px);
-  width: 90%;
-}
-
-.animate-pulse-slow {
-  animation: pulse 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-.animate-pulse-slower {
-  animation: pulse 6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse {
-
-  0%,
-  100% {
-    opacity: 0.1;
+/* Mobile Responsiveness */
+@media (max-width: 1023px) {
+  .service-row {
+    flex-direction: column !important;
+    /* Force stack on mobile */
+    gap: 3rem;
   }
 
-  50% {
-    opacity: 0.3;
+  .service-row:nth-child(even) {
+    flex-direction: column !important;
+    /* Force stack on mobile (no reverse) */
   }
-}
 
-.glow-sm {
-  box-shadow: 0 0 10px 2px currentColor;
-}
-
-.perspective-1000 {
-  perspective: 1000px;
-}
-
-.rotate-x-12 {
-  transform: rotateX(12deg) rotateY(-12deg);
-}
-
-.glass-stack {
-  position: relative;
-  transform-style: preserve-3d;
+  .service-heading {
+    font-size: 1.75rem;
+  }
 }
