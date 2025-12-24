@@ -1,5 +1,4 @@
-import React from 'react';
-import { BrainCircuit, Bot, Database, Sparkles } from 'lucide-react';
+import React, { useRef } from 'react';
 
 const services = [
     {
@@ -7,28 +6,24 @@ const services = [
         title: "Intelligent Reasoning & Logic Systems",
         tech: "Advanced LLMs (Claude/GPT), Prompt Engineering, Custom Fine-Tuning",
         outcome: "We build the \"Executive Brain\" of your business. We transform complex intent into executable logic, automating strategy, coding, and planning.",
-        icon: <BrainCircuit size={48} className="text-purple-400" />
     },
     {
         id: 2,
         title: "Autonomous Agent & Orchestration Engines",
         tech: "n8n, Make, CrewAI, LangChain",
         outcome: "Deploy a \"Digital Workforce.\" We architect self-correcting agent loops that handle sales, support, and ops pipelines end-to-end without supervision.",
-        icon: <Bot size={48} className="text-blue-400" />
     },
     {
         id: 3,
         title: "Context-Aware Memory & Knowledge Hubs",
         tech: "RAG, Vector Databases (Pinecone/Chroma)",
         outcome: "Your \"Company Brain.\" We link AI to your private files (Notion, Airtable, PDFs) to create an hallucination-free intelligence hub that knows your business truth.",
-        icon: <Database size={48} className="text-emerald-400" />
     },
     {
         id: 4,
         title: "Multi-Modal Creation & Insight Layers",
         tech: "Voice AI, Avatars (HeyGen), Video Gen (Runway), AI Analytics",
         outcome: "Automated Growth. We turn raw data into insights and blog posts into professional video/voice content instantly, scaling your output 10x.",
-        icon: <Sparkles size={48} className="text-pink-400" />
     }
 ];
 
@@ -60,20 +55,13 @@ const ServicesLayers = () => {
                             key={service.id}
                             className={`service-layer-row flex flex-col lg:flex-row items-center gap-12 lg:gap-24 ${index % 2 !== 0 ? 'lg:flex-row-reverse' : ''}`}
                         >
-                            {/* Visual Side (Placeholder) */}
+                            {/* Visual Side (Placeholder for Animation) */}
                             <div className="layer-visual flex-1 w-full h-[400px] relative">
                                 <VisualBlock />
                             </div>
 
                             {/* Text Side */}
                             <div className="layer-text flex-1 text-left">
-                                <div className="flex items-center gap-3 mb-6">
-                                    <div className="p-3 rounded-lg bg-white/5 border border-white/10 text-white">
-                                        {service.icon}
-                                    </div>
-                                    <span className="text-sm font-mono text-purple-300/80 tracking-wider">0{service.id}</span>
-                                </div>
-
                                 <h3 className="text-3xl font-bold mb-4 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
                                     {service.title}
                                 </h3>
