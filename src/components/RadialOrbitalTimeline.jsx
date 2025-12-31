@@ -113,18 +113,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
     return relatedItems.includes(itemId);
   };
 
-  const getStatusClass = (status) => {
-    switch (status) {
-      case "completed":
-        return "status-completed";
-      case "in-progress":
-        return "status-in-progress";
-      case "pending":
-        return "status-pending";
-      default:
-        return "status-pending";
-    }
-  };
+
 
   return (
     <div
@@ -147,7 +136,9 @@ export default function RadialOrbitalTimeline({ timelineData }) {
               className="rot-center-ping-2"
               style={{ animationDelay: "0.5s" }}
             ></div>
-            <div className="rot-center-core"></div>
+            <div className="rot-center-content">
+
+            </div>
           </div>
 
           <div className="rot-orbit-track"></div>
@@ -176,35 +167,32 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                   toggleItem(item.id);
                 }}
               >
-                {/* Energy Pulse Background */}
                 <div
                   className={`rot-node-energy ${isPulsing ? "pulsing" : ""}`}
                   style={{
-                    width: `${item.energy * 0.5 + 40}px`,
-                    height: `${item.energy * 0.5 + 40}px`,
-                    left: `-${(item.energy * 0.5 + 40 - 40) / 2}px`,
-                    top: `-${(item.energy * 0.5 + 40 - 40) / 2}px`,
+                    width: `60px`,
+                    height: `60px`,
+                    left: `-10px`,
+                    top: `-10px`,
                   }}
                 ></div>
 
                 {/* Node Circle */}
                 <div
-                  className={`rot-node-circle ${
-                    isExpanded
-                      ? "circle-expanded"
-                      : isRelated
+                  className={`rot-node-circle ${isExpanded
+                    ? "circle-expanded"
+                    : isRelated
                       ? "circle-related"
                       : "circle-default"
-                  }`}
+                    }`}
                 >
                   <Icon size={16} />
                 </div>
 
                 {/* Node Label */}
                 <div
-                  className={`rot-node-label ${
-                    isExpanded ? "label-expanded" : "label-default"
-                  }`}
+                  className={`rot-node-label ${isExpanded ? "label-expanded" : "label-default"
+                    }`}
                 >
                   {item.title}
                 </div>
@@ -212,21 +200,13 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                 {/* Expanded Card */}
                 {isExpanded && (
                   <div className="rot-card">
-                    <div className="rot-card-line"></div>
                     <div className="rot-card-header">
                       <div className="rot-card-meta">
-                        <span
-                          className={`rot-badge ${getStatusClass(item.status)}`}
-                        >
-                          {item.status === "completed"
-                            ? "COMPLETE"
-                            : item.status === "in-progress"
-                            ? "IN PROGRESS"
-                            : "PENDING"}
+                        <span className="rot-badge automation-badge">
+                          {item.badge}
                         </span>
-                        <span className="rot-date">{item.date}</span>
                       </div>
-                      <h3 className="rot-card-title">{item.title}</h3>
+                      <h3 className="rot-card-title">{item.cardTitle}</h3>
                     </div>
                     <div className="rot-card-content">
                       <p>{item.content}</p>
@@ -235,15 +215,12 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                         <div className="rot-energy-header">
                           <span className="flex-center">
                             <Zap size={10} className="mr-1" />
-                            Energy Level
+                            Automation Coverage
                           </span>
-                          <span className="font-mono">{item.energy}%</span>
                         </div>
-                        <div className="rot-energy-bar-bg">
-                          <div
-                            className="rot-energy-bar-fill"
-                            style={{ width: `${item.energy}%` }}
-                          ></div>
+                        <div className="rot-coverage-info">
+                          <span className="rot-coverage-label">{item.coverageLabel}</span>
+                          <span className="rot-coverage-value">{item.coverageValue}</span>
                         </div>
                       </div>
 
@@ -251,12 +228,12 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                         <div className="rot-related-section">
                           <div className="rot-related-header">
                             <Link size={10} className="mr-1 opacity-70" />
-                            <h4>Connected Nodes</h4>
+                            <h4>Triggers Next</h4>
                           </div>
                           <div className="rot-related-tags">
                             {item.relatedIds.map((relatedId) => {
                               const relatedItem = timelineData.find(
-                                (i) => i.id === relatedId
+                                (i) => i.id === Number(relatedId)
                               );
                               return (
                                 <button
@@ -264,7 +241,7 @@ export default function RadialOrbitalTimeline({ timelineData }) {
                                   className="rot-related-btn"
                                   onClick={(e) => {
                                     e.stopPropagation();
-                                    toggleItem(relatedId);
+                                    toggleItem(Number(relatedId));
                                   }}
                                 >
                                   {relatedItem?.title}
