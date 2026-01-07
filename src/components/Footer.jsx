@@ -33,7 +33,7 @@ const Footer = () => {
                     </div>
                 </div>
                 <div className="mt-20 flex flex-col items-center justify-between gap-4 border-t border-gray-100 pt-8 dark:border-white/5 md:flex-row">
-                    <p className="text-xs text-gray-400">© 2024 AIFLO.pro. All rights reserved.</p>
+                    <p className="text-xs text-gray-400">© 2026 AIFLO.pro. All rights reserved.</p>
                     <div className="flex gap-4">
                         <a className="text-gray-400 hover:text-primary" href="#"><span className="material-symbols-outlined text-xl">public</span></a>
                         <a className="text-gray-400 hover:text-primary" href="#"><span className="material-symbols-outlined text-xl">mail</span></a>
