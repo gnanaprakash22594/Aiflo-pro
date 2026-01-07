@@ -22,11 +22,18 @@ const Navbar = () => {
             }`}>
             <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
                 {/* Logo */}
-                <a className="flex items-center gap-3 group" href="#">
+                <a className="relative flex items-center group w-48 h-12" href="#">
+                    {/* Full Logo */}
                     <img
-                        src={scrolled100 ? logoMark : logo}
+                        src={logo}
                         alt="AIFLO.pro"
-                        className={`${scrolled100 ? 'h-10 w-10' : 'h-12 w-auto'} transition-all duration-300 hover:opacity-80`}
+                        className={`absolute inset-0 h-12 w-auto transition-all duration-500 ease-in-out ${scrolled100 ? 'opacity-0 scale-90 invisible' : 'opacity-100 scale-100 visible'} hover:opacity-80`}
+                    />
+                    {/* Logo Mark Only */}
+                    <img
+                        src={logoMark}
+                        alt="AIFLO.pro Mark"
+                        className={`absolute left-0 top-1 h-10 w-10 transition-all duration-500 ease-in-out ${scrolled100 ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-90 invisible'} hover:opacity-80`}
                     />
                 </a>
 
