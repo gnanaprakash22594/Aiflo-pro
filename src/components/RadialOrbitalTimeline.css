@@ -40,8 +40,8 @@
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, #a855f7, #3b82f6, #14b8a6);
-  /* purple-500, blue-500, teal-500 */
+  background: linear-gradient(135deg, #a00fbd, #e91e63, #ffb74d);
+  /* brand gradient-pop: primary, accent-magenta, accent-amber */
   display: flex;
   align-items: center;
   justify-content: center;
