@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import logo from '../assets/logo.png';
+import logoMark from '../assets/favicon.png';
 
 const Navbar = () => {
     const [scrolled, setScrolled] = useState(false);
+    const [scrolled100, setScrolled100] = useState(false);
 
     useEffect(() => {
         const handleScroll = () => {
             setScrolled(window.scrollY > 20);
+            setScrolled100(window.scrollY > 100);
         };
         window.addEventListener('scroll', handleScroll);
         return () => window.removeEventListener('scroll', handleScroll);
@@ -20,7 +23,11 @@ const Navbar = () => {
             <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
                 {/* Logo */}
                 <a className="flex items-center gap-3 group" href="#">
-                    <img src={logo} alt="AIFLO.pro" className="h-12 w-auto transition-opacity hover:opacity-80" />
+                    <img
+                        src={scrolled100 ? logoMark : logo}
+                        alt="AIFLO.pro"
+                        className={`${scrolled100 ? 'h-10 w-10' : 'h-12 w-auto'} transition-all duration-300 hover:opacity-80`}
+                    />
                 </a>
 
 
