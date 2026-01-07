@@ -62,7 +62,7 @@ const Hero = () => {
     ];
 
     return (
-        <section className="relative w-full overflow-hidden px-6 pb-20 pt-16 lg:px-8 lg:pt-24">
+        <section className="relative w-full overflow-hidden px-6 pb-20 pt-10 lg:px-8 lg:pt-16">
             <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:items-center">
                 {/* Left Content */}
                 <div className="flex flex-col gap-8 text-left">
