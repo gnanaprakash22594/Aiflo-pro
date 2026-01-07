@@ -20,7 +20,7 @@ const Navbar = () => {
             <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-6 lg:px-8">
                 {/* Logo */}
                 <a className="flex items-center gap-3 group" href="#">
-                    <img src={logo} alt="AIFLO.pro" className="h-10 w-auto transition-opacity hover:opacity-80" />
+                    <img src={logo} alt="AIFLO.pro" className="h-12 w-auto transition-opacity hover:opacity-80" />
                 </a>
 
 

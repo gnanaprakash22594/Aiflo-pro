@@ -8,7 +8,7 @@ const Footer = () => {
                 <div className="grid gap-12 md:grid-cols-4">
                     <div className="md:col-span-2 text-left">
                         <a className="flex items-center gap-2 mb-6" href="#">
-                            <img src={logo} alt="AIFLO.pro" className="h-10 w-auto" />
+                            <img src={logo} alt="AIFLO.pro" className="h-12 w-auto" />
                         </a>
 
                         <p className="max-w-xs text-sm text-gray-500 dark:text-gray-400">
