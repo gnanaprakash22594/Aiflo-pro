@@ -1,18 +1,23 @@
-:root {
-  --bg-color: #030014;
-  --bg-secondary: #0f0b29;
-  --text-primary: #ffffff;
-  --text-secondary: #9ca3af;
-  --primary-gradient: linear-gradient(135deg, #7000ff 0%, #3d2cdb 100%);
-  --accent-color: #3d2cdb;
-  --success-color: #10b981;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
-  --font-heading: 'Outfit', sans-serif;
-  --font-body: 'Inter', sans-serif;
-
-  --spacing-container: 1280px;
-  --header-height: 80px;
+@layer base {
+  body {
+    @apply bg-background-light dark:bg-background-dark text-text-main dark:text-white antialiased overflow-x-hidden;
+    font-family: 'Inter', sans-serif;
+  }
 }
+
+@layer utilities {
+  .text-gradient {
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-image: linear-gradient(90deg, #a00fbd, #e91e63);
+  }
+}
+
 
 * {
   margin: 0;

@@ -1,13 +1,13 @@
 /* Main Container */
 .rot-container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #000;
-  overflow: hidden;
+  background-color: transparent;
+  overflow: visible;
   position: relative;
   font-family: var(--font-body, "Inter", sans-serif);
 }
@@ -15,7 +15,8 @@
 .rot-wrapper {
   position: relative;
   width: 100%;
-  max-width: 56rem; /* max-w-4xl */
+  max-width: 56rem;
+  /* max-w-4xl */
   height: 100%;
   display: flex;
   align-items: center;
@@ -39,7 +40,8 @@
   width: 4rem;
   height: 4rem;
   border-radius: 50%;
-  background: linear-gradient(135deg, #a855f7, #3b82f6, #14b8a6); /* purple-500, blue-500, teal-500 */
+  background: linear-gradient(135deg, #a855f7, #3b82f6, #14b8a6);
+  /* purple-500, blue-500, teal-500 */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -95,11 +97,22 @@
 
 .rot-orbit-track {
   position: absolute;
-  width: 24rem; /* 96 * 0.25rem = 24rem approx */
+  width: 24rem;
+  /* 96 * 0.25rem = 24rem approx */
   height: 24rem;
   border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(0, 0, 0, 0.05);
   pointer-events: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  .rot-orbit-track {
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+}
+
+.dark .rot-orbit-track {
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Nodes */
@@ -138,6 +151,12 @@
 }
 
 .circle-default {
+  background-color: #fff;
+  color: #000;
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.dark .circle-default {
   background-color: #000;
   color: #fff;
   border-color: rgba(255, 255, 255, 0.4);
@@ -175,6 +194,10 @@
 }
 
 .label-default {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+.dark .label-default {
   color: rgba(255, 255, 255, 0.7);
 }
 
@@ -282,7 +305,9 @@
   align-items: center;
 }
 
-.mr-1 { margin-right: 0.25rem; }
+.mr-1 {
+  margin-right: 0.25rem;
+}
 
 .rot-coverage-info {
   display: flex;
@@ -351,7 +376,9 @@
 
 /* Animations */
 @keyframes rot-ping {
-  75%, 100% {
+
+  75%,
+  100% {
     transform: scale(2);
     opacity: 0;
   }
@@ -364,7 +391,18 @@
 }
 
 /* Utilities not in variables */
-.opacity-70 { opacity: 0.7; }
-.opacity-60 { opacity: 0.6; }
-.ml-1 { margin-left: 0.25rem; }
-.font-mono { font-family: monospace; }
+.opacity-70 {
+  opacity: 0.7;
+}
+
+.opacity-60 {
+  opacity: 0.6;
+}
+
+.ml-1 {
+  margin-left: 0.25rem;
+}
+
+.font-mono {
+  font-family: monospace;
+}
