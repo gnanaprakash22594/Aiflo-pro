@@ -154,9 +154,12 @@
 }
 
 .circle-default {
-  background-color: #fff;
-  color: #000;
-  border-color: rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(8px);
+  color: #a00fbd;
+  /* brand primary */
+  border: 1px solid rgba(160, 15, 189, 0.2);
+  box-shadow: 0 4px 6px -1px rgba(160, 15, 189, 0.1);
 }
 
 .dark .circle-default {
@@ -200,12 +203,15 @@
 }
 
 .label-default {
-  color: rgba(0, 0, 0, 0.8);
+  color: rgba(15, 10, 17, 0.6);
+  /* text-main/60 */
+  font-weight: 700;
+  letter-spacing: 0.02em;
 }
 
 .dark .label-default {
-  color: rgba(255, 255, 255, 0.5);
-  background: linear-gradient(to right, rgba(233, 30, 99, 0.6), rgba(255, 255, 255, 0.6));
+  color: rgba(255, 255, 255, 0.6);
+  background: linear-gradient(135deg, rgba(233, 30, 99, 0.8), rgba(255, 255, 255, 0.8));
   -webkit-background-clip: text;
   background-clip: text;
 }
