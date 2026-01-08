@@ -74,7 +74,7 @@ const Hero = () => {
                         BUILD INTELLIGENT <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent-magenta to-accent-coral">SYSTEMS</span>. GET YOUR TIME BACK.
                     </h1>
                     <p className="max-w-xl text-lg font-medium leading-relaxed text-gray-600 dark:text-gray-400">
-                        Premium AI workflows and automation architecture for serial entrepreneurs. Stop drowning in operational friction and start building self-driving companies.
+                        We don’t start with tools. We start by understanding your bottlenecks and opportunities, then design and build Practical & Scalable Automations.
                     </p>
                     <div className="flex flex-wrap items-center gap-4 justify-start">
                         <button className="flex h-12 items-center justify-center rounded-lg bg-primary px-8 text-base font-bold text-white shadow-xl shadow-primary/30 transition-transform hover:-translate-y-0.5 active:translate-y-0">
