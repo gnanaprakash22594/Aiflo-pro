@@ -2,7 +2,7 @@ import React from 'react';
 
 const Services = () => {
     return (
-        <section className="py-24" id="services">
+        <section className="pt-8 pb-24" id="services">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6 text-left">
                     <div className="max-w-2xl">
