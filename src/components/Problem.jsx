@@ -5,7 +5,7 @@ const Problem = () => {
         <section className="bg-gray-50 py-24 dark:bg-white/5" id="problem">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mb-16 md:max-w-2xl text-left">
-                    <h2 className="mb-6 text-sm font-bold uppercase tracking-widest text-primary">The Friction</h2>
+
                     <h3 className="text-3xl font-black uppercase leading-tight tracking-tight text-text-main dark:text-white md:text-5xl">
                         The Founder's Bottleneck
                     </h3>

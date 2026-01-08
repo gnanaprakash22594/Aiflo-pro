@@ -6,7 +6,7 @@ const Services = () => {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6 text-left">
                     <div className="max-w-2xl">
-                        <h2 className="mb-6 text-sm font-bold uppercase tracking-widest text-primary">The Solution</h2>
+
                         <h3 className="text-3xl font-black uppercase leading-tight tracking-tight text-text-main dark:text-white md:text-5xl">
                             From Chaos to <span className="text-primary">Clockwork</span>
                         </h3>
