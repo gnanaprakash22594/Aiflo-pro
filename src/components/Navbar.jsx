@@ -26,7 +26,7 @@ const Navbar = () => {
 
                 {/* Desktop Menu */}
                 <div className="hidden items-center gap-8 md:flex">
-                    <a className="text-sm font-medium text-text-main hover:text-primary dark:text-gray-300 dark:hover:text-white" href="#problem">Problem</a>
+
                     <a className="text-sm font-medium text-text-main hover:text-primary dark:text-gray-300 dark:hover:text-white" href="#services">Services</a>
                     <a className="text-sm font-medium text-text-main hover:text-primary dark:text-gray-300 dark:hover:text-white" href="#method">Method</a>
                     <a className="text-sm font-medium text-text-main hover:text-primary dark:text-gray-300 dark:hover:text-white" href="#why-us">Why Us</a>
