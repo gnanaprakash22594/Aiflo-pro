@@ -68,7 +68,7 @@ const Hero = () => {
                 <div className="flex flex-col gap-8 text-left">
                     <div className="inline-flex w-fit items-center gap-2 rounded-full border border-primary/20 bg-primary/5 px-4 py-1.5 backdrop-blur-sm">
                         <span className="flex h-2 w-2 rounded-full bg-accent-magenta animate-pulse"></span>
-                        <span className="text-xs font-bold uppercase tracking-wide text-primary">Accepting New Founders for Q4</span>
+                        <span className="text-xs font-bold uppercase tracking-wide text-primary">Workflow Automation & MVP Development</span>
                     </div>
                     <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-text-main dark:text-white sm:text-6xl lg:text-7xl">
                         BUILD INTELLIGENT <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent-magenta to-accent-coral">SYSTEMS</span>. GET YOUR TIME BACK.
