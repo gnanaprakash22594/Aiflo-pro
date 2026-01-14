@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import RadialOrbitalTimeline from './RadialOrbitalTimeline';
 import { Eye, Layout, Cpu, Activity, RefreshCw } from 'lucide-react';
 
 const Hero = () => {
+    const [scrollProgress, setScrollProgress] = useState(0);
     const timelineData = [
         {
             id: 1,
@@ -61,6 +62,21 @@ const Hero = () => {
         }
     ];
 
+    useEffect(() => {
+        const handleScroll = () => {
+            const scrollY = window.scrollY;
+            // Calculate progress based on first 400px of scroll
+            const progress = Math.min(scrollY / 400, 1);
+            setScrollProgress(progress);
+        };
+
+        window.addEventListener('scroll', handleScroll, { passive: true });
+        return () => window.removeEventListener('scroll', handleScroll);
+    }, []);
+
+    // Calculate scale based on scroll progress (1.0 to 1.15)
+    const textScale = 1 + (scrollProgress * 0.15);
+
     return (
         <section className="relative w-full overflow-hidden px-6 pb-6 pt-4 lg:px-8 lg:pt-6">
             <div className="mx-auto grid max-w-7xl gap-16 lg:grid-cols-2 lg:items-center">
@@ -70,7 +86,10 @@ const Hero = () => {
                         <span className="flex h-2 w-2 rounded-full bg-accent-magenta animate-pulse"></span>
                         <span className="text-xs font-bold uppercase tracking-wide text-primary">Workflow Automation & MVP Development</span>
                     </div>
-                    <h1 className="text-5xl font-black leading-[0.95] tracking-tight text-text-main dark:text-white sm:text-6xl lg:text-7xl">
+                    <h1
+                        className="text-5xl font-black leading-[0.95] tracking-tight text-text-main dark:text-white sm:text-6xl lg:text-7xl transition-transform duration-300 ease-out"
+                        style={{ transform: `scale(${textScale})`, transformOrigin: 'left center' }}
+                    >
                         BUILD INTELLIGENT <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-accent-magenta to-accent-coral">SYSTEMS</span>. GET YOUR TIME BACK.
                     </h1>
                     <p className="max-w-xl text-lg font-medium leading-relaxed text-gray-600 dark:text-gray-400">
