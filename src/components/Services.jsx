@@ -1,4 +1,4 @@
-import React from 'react';
+import logoMark from '../assets/logo-onscroll.png';
 
 const Services = () => {
     return (
@@ -6,8 +6,8 @@ const Services = () => {
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mb-16 flex flex-col md:flex-row md:items-end md:justify-between gap-6 text-left">
                     <div className="max-w-2xl">
-                        <h3 className="text-4xl font-black uppercase leading-tight tracking-tight text-text-main dark:text-white md:text-6xl">
-                            From Chaos to <span className="text-primary">Clockwork</span>
+                        <h3 className="text-4xl font-black uppercase leading-tight tracking-tight text-text-main dark:text-white md:text-6xl flex flex-wrap items-center gap-3">
+                            From Chaos to <span className="text-primary inline-flex items-center gap-4">Clockwork <img src={logoMark} alt="Aiflo" className="h-[68px] w-auto md:h-[108px] mt-[3px]" /></span>
                         </h3>
                         <p className="mt-6 text-lg leading-relaxed text-gray-600 dark:text-gray-300">
                             Stop wasting hours on manual work. We engineer high-performance systems that automate complexity, reduce overhead, and deliver tangible ROI within weeks.

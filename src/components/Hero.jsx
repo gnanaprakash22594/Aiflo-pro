@@ -121,7 +121,7 @@ const Hero = () => {
                 </div>
 
                 {/* Right Visual */}
-                <div className="relative aspect-square w-full lg:h-[600px] flex items-center justify-center">
+                <div className="relative aspect-square w-full lg:h-[600px] flex items-center justify-center my-[50px] md:mt-[-100px] md:mb-[50px]">
                     <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-primary/20 to-accent-amber/20 blur-[100px] rounded-full opacity-60"></div>
                     <div className="w-full h-full">
                         <RadialOrbitalTimeline timelineData={timelineData} />
